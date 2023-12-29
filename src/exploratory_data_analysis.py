@@ -34,13 +34,6 @@ test_FD004 = load_dataset(f'{data_folder}/test_FD004.txt')
 
 print(train_FD001.describe())
 
-'''for i in range(1, 22):
-    plt.figure(figsize=(10, 4))
-    sns.histplot(train_FD001[f'sensor_measurement_{i}'], kde=True, bins=30)
-    plt.title(f'Sensor Measurement {i} Distribution - FD001')
-    plt.show()
-'''
-
 # EDA - Use the function to plot histograms for each sensor
 for i in range(1, 22):
 
@@ -94,14 +87,7 @@ for dataset in dataset_names:
 
 print("EDA plots generated successfully.")
 
-'''sensors_to_plot = [1, 2, 3, 4]  # Example sensor numbers
-unit_number = 1  # Example unit number
-
-for sensor in sensors_to_plot:
-    plt.figure(figsize=(10, 4))
-    sns.lineplot(x='time_in_cycles', y=f'sensor_measurement_{sensor}', data=train_FD001[train_FD001['unit_number'] == unit_number])
-    plt.title(f'Sensor Measurement {sensor} Over Time - Unit {unit_number} - FD001')
-    plt.show()'''
+#if needed
 
 
 #correlation mattrix
@@ -134,4 +120,20 @@ print("EDA plots generated successfully.")
 sns.heatmap(train_FD002.iloc[:, 2:].corr(), annot=False, cmap='viridis')
 plt.title('Correlation Matrix - FD001')
 plt.show()
+'''
+
+'''sensors_to_plot = [1, 2, 3, 4]  # Example sensor numbers
+unit_number = 1  # Example unit number
+
+for sensor in sensors_to_plot:
+    plt.figure(figsize=(10, 4))
+    sns.lineplot(x='time_in_cycles', y=f'sensor_measurement_{sensor}', data=train_FD001[train_FD001['unit_number'] == unit_number])
+    plt.title(f'Sensor Measurement {sensor} Over Time - Unit {unit_number} - FD001')
+    plt.show()'''
+
+'''for i in range(1, 22):
+    plt.figure(figsize=(10, 4))
+    sns.histplot(train_FD001[f'sensor_measurement_{i}'], kde=True, bins=30)
+    plt.title(f'Sensor Measurement {i} Distribution - FD001')
+    plt.show()
 '''
