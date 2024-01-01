@@ -21,10 +21,11 @@ def test_train_and_evaluate_model():
     X_train, y_train, X_test, y_test = get_sample_data()
     
     # Test the train_and_evaluate_model function
-    model, mse, r2 = train_and_evaluate_model(X_train, y_train, X_test, y_test)
+    model, mse, mae, r2 = train_and_evaluate_model(X_train, y_train, X_test, y_test)
 
     # Adjust the test to account for potential model performance issues
     assert model is not None, "Model training failed"
     assert mse >= 0, "Mean Squared Error should be non-negative"
+    assert mae >= 0, "Mean Absolute Error should be non-negative"
     if not -1 <= r2 <= 1:
         print(f"Warning: R-squared value of {r2} is outside the typical range. Model might be performing poorly.")
