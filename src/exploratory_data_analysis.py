@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+
 # Define the function to plot sensor distributions
 def plot_sensor_distribution(data, sensor_number, dataset_id, data_folder):
     plt.figure(figsize=(10, 4))
@@ -9,6 +10,7 @@ def plot_sensor_distribution(data, sensor_number, dataset_id, data_folder):
     plt.title(f'Sensor Measurement {sensor_number} Distribution - {dataset_id}')
     plt.savefig(f'{data_folder}/eda/histograms/Sensor_Measurement_{sensor_number}_Distribution_{dataset_id}.png')  # Save the figure
     plt.close()  # Close the plot to save memory
+
 
 def load_dataset(filename):
     columns = ['unit_number', 'time_in_cycles', 'operational_setting_1', 'operational_setting_2', 'operational_setting_3'] + \
@@ -115,25 +117,3 @@ plot_correlation_matrix(test_FD004, 'test_FD004', data_folder)
 # Repeat for other datasets as needed
 
 print("EDA plots generated successfully.")
-
-'''plt.figure(figsize=(12, 10))
-sns.heatmap(train_FD002.iloc[:, 2:].corr(), annot=False, cmap='viridis')
-plt.title('Correlation Matrix - FD001')
-plt.show()
-'''
-
-'''sensors_to_plot = [1, 2, 3, 4]  # Example sensor numbers
-unit_number = 1  # Example unit number
-
-for sensor in sensors_to_plot:
-    plt.figure(figsize=(10, 4))
-    sns.lineplot(x='time_in_cycles', y=f'sensor_measurement_{sensor}', data=train_FD001[train_FD001['unit_number'] == unit_number])
-    plt.title(f'Sensor Measurement {sensor} Over Time - Unit {unit_number} - FD001')
-    plt.show()'''
-
-'''for i in range(1, 22):
-    plt.figure(figsize=(10, 4))
-    sns.histplot(train_FD001[f'sensor_measurement_{i}'], kde=True, bins=30)
-    plt.title(f'Sensor Measurement {i} Distribution - FD001')
-    plt.show()
-'''

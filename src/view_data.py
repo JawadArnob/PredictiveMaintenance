@@ -18,5 +18,5 @@ def view_data(data_folder):
         print(df.head())  # Display the first few rows
 
 if __name__ == "__main__":
-    data_folder = '/Users/jawadarnob/PredMain/data/'  # Update with the correct path
+    data_folder = '/Users/jawadarnob/PredMain/data/' 
     view_data(data_folder)

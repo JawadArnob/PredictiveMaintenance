@@ -28,4 +28,3 @@ def test_train_and_evaluate_model():
     assert mse >= 0, "Mean Squared Error should be non-negative"
     if not -1 <= r2 <= 1:
         print(f"Warning: R-squared value of {r2} is outside the typical range. Model might be performing poorly.")
-
