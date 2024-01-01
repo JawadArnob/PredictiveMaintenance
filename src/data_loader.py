@@ -22,7 +22,7 @@ def load_data():
         rul_df = pd.read_csv(rul_file, header=None, names=['RUL'], engine='python')
 
         # Merge RUL data with test data
-        # Assuming the RUL data is in the same order as the test data engines
+        # the RUL data is in the same order as the test data engines
         test_df = test_df.groupby('unit_number').last().reset_index()
         test_df = test_df.merge(rul_df, left_index=True, right_index=True)
 

@@ -22,7 +22,6 @@ def normalize_data(df):
 
 def preprocess_data(df):
     df = fill_missing_values(df)
-    #df = add_rolling_features(df)
     df = normalize_data(df)
 
     # Use forward fill, then fill any remaining NaNs with 0
