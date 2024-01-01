@@ -27,8 +27,8 @@ def main():
         y_test = datasets[key]['test']['RUL']
 
         # Train and Evaluate Model
-        model, mse, r2 = train_and_evaluate_model(X_train, y_train, X_test, y_test)
-        print(f"Model Performance on {key}: MSE = {mse}, R^2 = {r2}")
+        model, mse, mae, r2 = train_and_evaluate_model(X_train, y_train, X_test, y_test)
+        print(f"Model Performance on {key}: MSE = {mse}, R^2 = {r2}, MAE = {mae}")
 
 if __name__ == "__main__":
     main()

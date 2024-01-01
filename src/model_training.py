@@ -1,4 +1,31 @@
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
+import pandas as pd
+
+def train_and_evaluate_model(X_train, y_train, X_test, y_test):
+    # Initialize the RandomForestRegressor model
+    model = RandomForestRegressor(n_estimators=100, random_state=42)
+
+    # Train the model on the training data
+    model.fit(X_train, y_train)
+
+    # Make predictions on the test set
+    y_pred = model.predict(X_test)
+
+    # Calculate evaluation metrics
+    mse = mean_squared_error(y_test, y_pred)  # Mean Squared Error
+    mae = mean_absolute_error(y_test, y_pred)  # Mean Absolute Error
+    r2 = r2_score(y_test, y_pred)  # R-squared Score
+
+    # Return the trained model and evaluation metrics
+    return model, mse, mae, r2
+
+# You can add additional functions or classes as needed for your model training
+
+
+
+'''#Model Training
+from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 import pandas as pd
 
@@ -16,7 +43,7 @@ def train_and_evaluate_model(X_train, y_train, X_test, y_test):
     mse = mean_squared_error(y_test, y_pred)
     r2 = r2_score(y_test, y_pred)
 
-    return model, mse, r2
+    return model, mse, r2'''
 
 
 '''from sklearn.ensemble import RandomForestRegressor
