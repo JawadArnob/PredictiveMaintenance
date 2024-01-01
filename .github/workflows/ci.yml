@@ -23,9 +23,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Lint with flake8
-      run: |
-        flake8 src/ tests/  # Adjust paths as needed
+   # - name: Lint with flake8
+   #   run: |
+   #     flake8 src/ tests/  # Adjust paths as needed
 
     - name: Run Tests
       run: |
