@@ -1,9 +1,0 @@
-[flake8]
-ignore = 
-    E501  # Ignore "line too long" errors
-    W293  # Ignore 'blank line contains whitespace'
-    E303  # Ignore 'too many blank lines'
-    F401  # Ignore 'imported but unused'
-    E302  # Ignore 'expected 2 blank lines, found 1'
-
-max-line-length = 500  # Set maximum line length to 120 characters
